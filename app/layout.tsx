@@ -85,6 +85,7 @@ export default function RootLayout({
         >
 
           <main
+            data-main-content
             className="
               flex-1
               overflow-y-auto

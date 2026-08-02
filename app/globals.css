@@ -25,3 +25,9 @@ body {
 
   overflow-x: hidden;
 }
+
+/* Halaman peta mengisi area aplikasi dan tidak memiliki scroll halaman. */
+[data-main-content]:has(.location-page) {
+  overflow-y: hidden;
+  overscroll-behavior: none;
+}

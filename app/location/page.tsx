@@ -6,7 +6,7 @@ import { LocationProvider } from "@/contexts/LocationContext";
 
 export default function LocationPage() {
   return (
-    <div className="relative h-[calc(100dvh-150px)] overflow-hidden rounded-[28px]">
+    <div className="location-page relative h-[calc(100dvh-150px)] overflow-hidden rounded-[28px]">
       <LocationProvider>
         <LiveMap />
         <LocationHeader />
