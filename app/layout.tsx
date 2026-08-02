@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
 import Header from "@/components/layout/Header";
 import BottomNav from "@/components/layout/BottomNav";
 
@@ -27,17 +28,70 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-200 min-h-screen flex justify-center items-center p-0 sm:p-4 font-sans text-slate-800`}
+        className={`
+          ${geistSans.variable}
+          ${geistMono.variable}
+
+          min-h-dvh
+          bg-slate-200
+
+          flex
+          justify-center
+
+          sm:items-center
+          items-start
+
+          p-0
+          sm:p-6
+
+          antialiased
+          font-sans
+          text-slate-800
+        `}
       >
-        {/* Frame HP Global untuk Semua Halaman */}
-        <div className="w-full max-w-md bg-slate-100 min-h-screen sm:min-h-[844px] sm:rounded-[40px] shadow-2xl flex flex-col justify-between overflow-hidden relative border-4 border-slate-800">
-          
+        {/* Mobile Frame */}
+        <div
+          className="
+            relative
+
+            w-full
+            max-w-md
+
+            min-h-dvh
+            sm:min-h-[844px]
+
+            bg-gradient-to-b
+            from-slate-50
+            via-white
+            to-slate-100
+
+            overflow-hidden
+
+            sm:rounded-[40px]
+
+            border
+            border-slate-200
+
+            shadow-[0_30px_80px_rgba(15,23,42,.15)]
+
+            flex
+            flex-col
+          "
+        >
           <Header />
 
-          {/* Halaman yang sedang dibuka akan dirender di sini */}
-          <div className="flex-1 overflow-y-auto pb-24 p-4">
+          <main
+            className="
+              flex-1
+              overflow-y-auto
+
+              px-4
+              pt-2
+              pb-28
+            "
+          >
             {children}
-          </div>
+          </main>
 
           <BottomNav />
         </div>
