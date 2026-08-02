@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: '/',
     display: 'standalone', // Ini rahasianya biar ga ada address bar browser!
     background_color: '#f1f5f9',
-    theme_color: '#059669',
+    theme_color: '#f8fafc',
     icons: [
       {
         src: '/logoFamilyHub.jpeg',

@@ -15,9 +15,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
+
 export const metadata: Metadata = {
   title: "Family Information Center (FIC)",
   description: "Platform Digital Keluarga Besar",
+  themeColor: "#f8fafc", // Menyatu dengan background
 };
 
 export default function RootLayout({
