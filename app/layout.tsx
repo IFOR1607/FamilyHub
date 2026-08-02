@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -19,7 +19,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Family Information Center (FIC)",
   description: "Platform Digital Keluarga Besar",
-  themeColor: "#f8fafc", // Menyatu dengan background
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f8fafc",
 };
 
 export default function RootLayout({
