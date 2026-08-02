@@ -72,7 +72,7 @@ export default function DevBanner() {
           <div className="w-full bg-amber-200/60 rounded-full h-1.5 overflow-hidden">
             <div 
               className="bg-amber-600 h-1.5 rounded-full transition-all duration-500" 
-              style={{ width: "35%" }}
+              style={{ width: "60%" }}
             ></div>
           </div>
         </div>

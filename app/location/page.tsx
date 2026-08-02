@@ -1,10 +1,18 @@
+import LocationHeader from "@/components/location/LocationHeader";
+import LiveMap from "@/components/maps/LeafletMap";
+import FloatingControls from "@/components/location/FloatingControls";
+import FamilyBottomSheet from "@/components/location/FamilyBottomSheet";
+import { LocationProvider } from "@/contexts/LocationContext";
+
 export default function LocationPage() {
   return (
-    <div className="space-y-3">
-      <h1 className="text-base font-bold text-slate-800">📍 Family Location</h1>
-      <p className="text-xs text-slate-500">
-        Halaman pemantauan GPS, status keberadaan, dan estimasi waktu perjalanan antar anggota keluarga.
-      </p>
+    <div className="relative h-[calc(100dvh-150px)] overflow-hidden rounded-[28px]">
+      <LocationProvider>
+        <LiveMap />
+        <LocationHeader />
+        <FloatingControls />
+        <FamilyBottomSheet />
+      </LocationProvider>
     </div>
   );
 }

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import Header from "@/components/layout/Header";
 import BottomNav from "@/components/layout/BottomNav";
 
 const geistSans = Geist({
@@ -81,7 +80,6 @@ export default function RootLayout({
             flex-col
           "
         >
-          <Header />
 
           <main
             className="

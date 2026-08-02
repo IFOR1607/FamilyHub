@@ -1,4 +1,12 @@
 1. Fitur lokasi antar anggota keluarga
+Melihat lokasi anggota keluarga secara langsung.
+Menampilkan nama lokasi dan alamat lengkap.
+Informasi detail mengenai tempat yang sedang dikunjungi.
+Menampilkan jarak antar anggota keluarga.
+Estimasi waktu perjalanan menuju lokasi.
+Informasi kondisi lalu lintas.
+Estimasi biaya transportasi.
+Integrasi dengan layanan transportasi online maupun aplikasi navigasi.
  => Memungkinkan antar anggota keluarga melihat lokasi individual secara realtime, anggota keluarga dapat mengklik informasi detail mengenai tempat, nama lokasi, jarak dari pengguna ke tujuan, estimasi biaya transportasi, pengecekan trafik lalu lintas, serta terhubung dengan penyedia layanan transportasi
 2. Fitur penyimpanan berkas penting 
  => Setiap anggota keluarga dapat mengakses berkas penting secara digital untuk keperluan individu, misalkan pendaftaran BPJS, pembukaan bisnis bersama, pembuatan SIM. Berkas yang disimpan secara default berbentuk Gambar (kartu keluarga,ktp,SIM,NPWP dll), setiap anggota dapat mengkonversi file gambar menjadi file line speti PDF, ZIP dll

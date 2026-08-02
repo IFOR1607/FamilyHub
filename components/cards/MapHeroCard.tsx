@@ -3,15 +3,17 @@
 import dynamic from "next/dynamic";
 import { UserPlus, LocateFixed } from "lucide-react";
 
-const LiveMap = dynamic(() => import("@/components/maps/LiveMap"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-slate-100 text-xs text-slate-400 font-medium animate-pulse">
-      🗺️ Memuat Peta...
-    </div>
-  ),
-});
-
+const DashboardMap = dynamic(
+  () => import("@/components/maps/DashboardMap"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full flex items-center justify-center bg-slate-100 text-xs text-slate-400 font-medium animate-pulse">
+        Memuat Peta...
+      </div>
+    ),
+  }
+);
 export default function MapHeroCard() {
   // Simulasi data status online/offline tiap member
   const members = [
@@ -41,7 +43,7 @@ export default function MapHeroCard() {
     >
       {/* REAL MAP CONTAINER */}
       <div className="absolute inset-0 z-0">
-        <LiveMap />
+        <DashboardMap />
       </div>
 
       <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-black/10 via-transparent to-black/20" />
