@@ -55,7 +55,7 @@ export default function DevBanner() {
         </div>
 
         <p className="text-[11px] text-amber-900/80 font-medium leading-tight">
-          🚀 Aplikasi sedang dalam tahap pengembangan aktif oleh Developer Keluarga.
+          🚀 Aplikasi sedang dalam tahap pengembangan aktif oleh Developer.
         </p>
 
         {/* Countdown Timer */}
