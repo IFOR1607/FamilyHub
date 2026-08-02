@@ -1,0 +1,13 @@
+1. Fitur lokasi antar anggota keluarga
+ => Memungkinkan antar anggota keluarga melihat lokasi individual secara realtime, anggota keluarga dapat mengklik informasi detail mengenai tempat, nama lokasi, jarak dari pengguna ke tujuan, estimasi biaya transportasi, pengecekan trafik lalu lintas, serta terhubung dengan penyedia layanan transportasi
+2. Fitur penyimpanan berkas penting 
+ => Setiap anggota keluarga dapat mengakses berkas penting secara digital untuk keperluan individu, misalkan pendaftaran BPJS, pembukaan bisnis bersama, pembuatan SIM. Berkas yang disimpan secara default berbentuk Gambar (kartu keluarga,ktp,SIM,NPWP dll), setiap anggota dapat mengkonversi file gambar menjadi file line speti PDF, ZIP dll
+3. Fitur kalender penjadwalan
+ => Setiap anggota keluarga dapat membuat jadwal kesepakatan bersama, seperti jadwal Video call, jadwal liburan, jadwal iuran mingguan, jadwal pembayaran UKT kuliah, jadwal pembayaran BPJS. Setiap individu juga dapat menambahkan jadwal nya sendiri, misalkan menambahkan jadwal ulang tahun sendiri, jadwal kunjugan rumah sakit. Hal ini bertjuan agar setiap anggota keluarga mengetahui keadaan anggota keluarga lainya
+4. Fitur kas
+ => Anggota keluarga dapat membayar iruan mingguan sesuai kemampuan masing masing, yang nantinya uang tersebut akan dikelola untuk kepentingan bersama, seperti biaya tak terduga (kecelakaan, bencana alam dll), atau untuk wacana liburan keluarga. Penjadwalan akan terlihat di fitur kalender, uang yang dikirim akan diterima oleh rekening virtual bersama.
+5. Fitur profile/avatar
+ => Setiap anggota keluarga memiliki 1 profile sebagai identitas mutlak berisi biografi pemilik seperti nama lengkap, tempat tanggal lahir, jabatan dan lain sebainya. 
+6. Fitur Album 
+ => Jika berkas menyimpan data penting, maka Album menyimpan file foto video bersama, setiap anggota dapat mengupload foto dan video mereka, file tersebut akan disimpan didalam storage cloud, serta web akan otomatis mengidentifikasi metadata dan mengkategorikan sesuai metadata tersebut, misalkan kategori wilayah, kategori tanggal, atau para anggota dapat membuat kategori sendiri, dan jika ada file yang belum teridentifikasi maka akan masuk kedalam kategori unknown
+   
