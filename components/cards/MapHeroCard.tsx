@@ -1,17 +1,36 @@
-import {
-  MapPinned,
-  Users,
-  UserPlus,
-  LocateFixed,
-} from "lucide-react";
+"use client";
+
+import dynamic from "next/dynamic";
+import { UserPlus, LocateFixed } from "lucide-react";
+
+const LiveMap = dynamic(() => import("@/components/maps/LiveMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center bg-slate-100 text-xs text-slate-400 font-medium animate-pulse">
+      🗺️ Memuat Peta...
+    </div>
+  ),
+});
 
 export default function MapHeroCard() {
+  // Simulasi data status online/offline tiap member
+  const members = [
+    { color: "bg-amber-300", name: "A", isOnline: true },
+    { color: "bg-sky-300", name: "I", isOnline: true },
+    { color: "bg-rose-300", name: "K", isOnline: true },
+    { color: "bg-violet-300", name: "D", isOnline: false }, // contoh offline
+    { color: "bg-emerald-300", name: "P", isOnline: true },
+  ];
+
+  // Hitung otomatis berapa member yang aktif
+  const activeCount = members.filter((m) => m.isOnline).length;
+
   return (
     <div
       className="
       relative
       w-full
-      h-52
+      h-56
       overflow-hidden
       rounded-[28px]
       border
@@ -20,286 +39,150 @@ export default function MapHeroCard() {
       bg-slate-200
     "
     >
-      {/* ===========================
-            GOOGLE MAPS CONTAINER
-          =========================== */}
-
-      <div
-        className="
-        absolute
-        inset-0
-        bg-[radial-gradient(#cbd5e1_1px,transparent_1px)]
-        [background-size:12px_12px]
-        bg-slate-200
-      "
-      >
-        {/* Nanti ganti menjadi Google Maps */}
+      {/* REAL MAP CONTAINER */}
+      <div className="absolute inset-0 z-0">
+        <LiveMap />
       </div>
 
-      {/* Dark Overlay */}
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-black/10 via-transparent to-black/20" />
 
+      {/* KIRI ATAS: STATUS ACTIVE COUNT */}
       <div
         className="
         absolute
-        inset-0
-
-        bg-gradient-to-b
-
-        from-black/5
-        via-transparent
-        to-black/35
-      "
-      />
-
-      {/* ===========================
-            INFO CARD
-          =========================== */}
-
-      <div
-        className="
-        absolute
-        top-4
-        left-4
-
-        backdrop-blur-xl
-
-        bg-white/75
-
+        top-3
+        left-3
+        z-20
+        flex
+        items-center
+        gap-2
+        rounded-full
+        bg-white/80
+        backdrop-blur-md
         border
-        border-white/40
-
-        rounded-2xl
-
-        px-4
-        py-3
-
-        shadow-lg
+        border-white/50
+        px-3
+        py-1.5
+        shadow-sm
       "
       >
-        <div className="flex items-center gap-3">
-
-          <div
-            className="
-            w-10
-            h-10
-
-            rounded-xl
-
-            bg-gradient-to-br
-            from-sky-500
-            to-cyan-400
-
-            flex
-            items-center
-            justify-center
-
-            shadow-md
-          "
-          >
-            <MapPinned
-              className="text-white"
-              size={20}
-              strokeWidth={2.3}
-            />
-          </div>
-
-          <div>
-            <p className="text-[11px] text-slate-500 font-medium">
-              Family Location
-            </p>
-
-            <h3 className="font-semibold text-[15px] text-slate-800 tracking-tight">
-              5 Anggota Aktif
-            </h3>
-          </div>
-
-        </div>
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span className="text-[11px] font-bold text-slate-700">
+          {activeCount} Member Active
+        </span>
       </div>
 
-      {/* ===========================
-            QUICK BUTTON
-          =========================== */}
-
+      {/* KANAN ATAS: RE-CENTER BUTTON */}
       <button
+        onClick={() => alert("Mencari lokasi kamu...")}
         className="
         absolute
-
-        top-4
-        right-4
-
-        w-12
-        h-12
-
-        rounded-2xl
-
-        bg-white/75
-
-        backdrop-blur-xl
-
+        top-3
+        right-3
+        z-20
+        w-9
+        h-9
+        rounded-full
+        bg-white/80
+        backdrop-blur-md
         border
-        border-white/40
-
-        shadow-lg
-
+        border-white/50
+        shadow-sm
         flex
         items-center
         justify-center
-
         hover:scale-105
+        active:scale-95
         transition-all
       "
       >
-        <LocateFixed
-          size={20}
-          className="text-slate-700"
-        />
+        <LocateFixed size={16} className="text-slate-700" />
       </button>
 
-      {/* ===========================
-            AVATAR STACK
-          =========================== */}
-
+      {/* KIRI BAWAH: AVATAR STACK + INDIKATOR STATUS ONLINE/OFFLINE */}
       <div
         className="
         absolute
-
-        bottom-4
-        left-4
-
+        bottom-3
+        left-3
+        z-20
         flex
         items-center
-
+        gap-1.5
         rounded-full
-
-        backdrop-blur-xl
-
-        bg-white/75
-
+        bg-white/80
+        backdrop-blur-md
         border
-        border-white/40
-
-        px-2
-        py-2
-
-        shadow-lg
+        border-white/50
+        p-1.5
+        pr-2.5
+        shadow-sm
       "
       >
-        {/* Add */}
-
+        {/* Tombol Add Mungil */}
         <button
           className="
-          w-10
-          h-10
-
+          w-7
+          h-7
           rounded-full
-
-          bg-gradient-to-br
-
-          from-emerald-500
-          to-teal-500
-
+          bg-emerald-500
           flex
           items-center
           justify-center
-
           text-white
-
-          shadow-md
-
-          mr-2
-
-          hover:scale-105
-
+          shadow-sm
+          hover:bg-emerald-600
           transition-all
           "
         >
-          <UserPlus size={18} />
+          <UserPlus size={13} />
         </button>
 
-        {/* Avatar */}
+        {/* Avatar Stack dengan Titik Ijo/Abu-abu */}
+        <div className="flex -space-x-1.5">
+          {members.map((item, index) => (
+            <div key={index} className="relative">
+              {/* Bulatan Avatar */}
+              <div
+                className={`
+                  w-7
+                  h-7
+                  rounded-full
+                  border-2
+                  border-white
+                  ${item.color}
+                  shadow-sm
+                  flex
+                  items-center
+                  justify-center
+                  text-[9px]
+                  font-bold
+                  text-slate-700
+                  ${!item.isOnline && "opacity-50 grayscale"}
+                `}
+              >
+                {item.name}
+              </div>
 
-        <div className="flex -space-x-3">
-
-          {[
-            "bg-amber-300",
-            "bg-sky-300",
-            "bg-rose-300",
-            "bg-violet-300",
-            "bg-emerald-300",
-          ].map((color, index) => (
-            <div
-              key={index}
-              className={`
-                relative
-                w-10
-                h-10
-                rounded-full
-                border-[3px]
-                border-white
-                ${color}
-                shadow-md
-              `}
-            >
+              {/* Titik Indikator Status di Pojok Kanan Bawah Avatar */}
               <span
-                className="
-                absolute
-                bottom-0
-                right-0
-
-                w-3
-                h-3
-
-                rounded-full
-
-                bg-emerald-500
-
-                border-2
-                border-white
-                "
+                className={`
+                  absolute
+                  -bottom-0.5
+                  -right-0.5
+                  w-2.5
+                  h-2.5
+                  rounded-full
+                  border-2
+                  border-white
+                  ${item.isOnline ? "bg-emerald-500" : "bg-slate-400"}
+                `}
               />
             </div>
           ))}
-
-        </div>
-      </div>
-
-      {/* ===========================
-            LIVE STATUS
-          =========================== */}
-
-      <div
-        className="
-        absolute
-
-        bottom-4
-        right-4
-
-        rounded-full
-
-        bg-white/75
-
-        backdrop-blur-xl
-
-        border
-        border-white/40
-
-        px-4
-        py-2
-
-        shadow-lg
-      "
-      >
-        <div className="flex items-center gap-2">
-
-          <Users
-            size={16}
-            className="text-slate-600"
-          />
-
-          <span className="text-xs font-semibold text-slate-700">
-            Live Tracking
-          </span>
-
         </div>
       </div>
     </div>
