@@ -13,20 +13,60 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 // Fix default icon issue di Leaflet + Next.js
-const customAvatarIcon = (colorBg: string, initial: string) => {
+const customAvatarIcon = (
+  colorBg: string,
+  initial: string,
+  selected: boolean
+) => {
   return L.divIcon({
     className: "custom-map-pin",
     html: `
-      <div class="relative w-9 h-9 rounded-full border-2 border-white shadow-lg ${colorBg} flex items-center justify-center font-bold text-slate-800 text-xs">
+      <div
+        class="
+          relative
+          flex
+          items-center
+          justify-center
+          rounded-full
+          border-2
+          border-white
+          shadow-xl
+          ${colorBg}
+          ${
+          selected
+            ? "marker-selected scale-125 ring-4 ring-sky-400"
+            : "scale-100"
+        }
+          transition-all
+          duration-300
+          w-9
+          h-9
+          font-bold
+          text-xs
+          text-slate-800
+        "
+      >
         ${initial}
-        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border border-white"></span>
+
+        <span
+          class="
+            absolute
+            -bottom-0.5
+            -right-0.5
+            w-2.5
+            h-2.5
+            rounded-full
+            bg-emerald-500
+            border
+            border-white
+          "
+        ></span>
       </div>
     `,
-    iconSize: [36, 36],
-    iconAnchor: [18, 18],
+    iconSize: selected ? [46, 46] : [36, 36],
+    iconAnchor: selected ? [23, 23] : [18, 18],
   });
 };
-
 // Dummy Data Lokasi Anggota Keluarga
 import { familyMembers } from "@/lib/dummy/family";
 
@@ -77,7 +117,11 @@ export default function LiveMap() {
           <Marker
             key={member.id}
             position={[member.lat, member.lng]}
-            icon={customAvatarIcon(member.color, member.initial)}
+            icon={customAvatarIcon(
+              member.color,
+              member.initial,
+              selectedMember?.id === member.id
+            )}
             eventHandlers={{
               click: () => {
                 setSelectedMember(member);

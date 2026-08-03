@@ -16,7 +16,7 @@ export default function Home() {
         <MapHeroCard />
         <GridMenuCards />
       </div>
-//    </div>
+    </div>
   );
 }
 

@@ -31,3 +31,25 @@ body {
   overflow-y: hidden;
   overscroll-behavior: none;
 }
+
+@keyframes markerBounce {
+  0% {
+    transform: translateY(0) scale(1.25);
+  }
+
+  30% {
+    transform: translateY(-10px) scale(1.32);
+  }
+
+  60% {
+    transform: translateY(0) scale(1.22);
+  }
+
+  100% {
+    transform: translateY(0) scale(1.25);
+  }
+}
+
+.marker-selected {
+  animation: markerBounce 0.45s ease;
+}
