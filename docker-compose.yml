@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  fic-app:
+    build: .                  # Otomatis build Dockerfile di folder ini
+    container_name: fic_app   # Nama container biar konsisten (nggak acak lagi)
+    ports:
+      - "3000:3000"           # Menghubungkan port 3000 laptop ke port 3000 container
+    restart: always           # Otomatis nyala lagi kalau laptop restart / crash

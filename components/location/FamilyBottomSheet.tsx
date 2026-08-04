@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  animate,
-  AnimatePresence,
-  motion,
-  useDragControls,
-  useMotionValue,
-} from "framer-motion";
+import { animate, AnimatePresence, motion, useDragControls, useMotionValue,} from "framer-motion";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { Clock3, ChevronUp, MapPin, ShieldCheck } from "lucide-react";
 import { useLocation } from "@/contexts/LocationContext";

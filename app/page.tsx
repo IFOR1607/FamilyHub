@@ -7,10 +7,7 @@ import Header from "@/components/layout/Header";
 export default function Home() {
   return (
     <div className="-mx-4 -mt-2">
-      {/* Header bakal berukuran persis seperti pas di layout awal */}
-      <Header />
-
-      {/* Konten sisanya baru dikasih padding px-4 & space-y-3 */}
+      <Header/>
       <div className="px-4 pt-5 space-y-3">
         <DevBanner />
         <MapHeroCard />
