@@ -55,7 +55,7 @@ export default function DevBanner() {
         </div>
 
         <p className="text-[11px] text-amber-900/80 font-medium leading-tight">
-          🚀 Aplikasi sedang dalam tahap pengembangan aktif oleh Developer.
+          🚀 Developer sedang ikut lomba dulu.
         </p>
 
         {/* Countdown Timer */}
@@ -64,7 +64,7 @@ export default function DevBanner() {
           <div className="flex justify-between items-center text-[10px]">
             <span className="text-amber-800/70 font-semibold">🎯 Target Berikutnya:</span>
             <span className="font-bold text-amber-950 bg-amber-200/80 px-2 py-0.5 rounded-full">
-              Halaman Detail Lokasi
+              Halaman Vault 
             </span>
           </div>
 
@@ -72,7 +72,7 @@ export default function DevBanner() {
           <div className="w-full bg-amber-200/60 rounded-full h-1.5 overflow-hidden">
             <div 
               className="bg-amber-600 h-1.5 rounded-full transition-all duration-500" 
-              style={{ width: "60%" }}
+              style={{ width: "20%" }}
             ></div>
           </div>
         </div>
