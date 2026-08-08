@@ -55,7 +55,7 @@ export default function MapHeroCard() {
       >
         <LocateFixed size={16} className="text-slate-700" />
       </button>
-
+ 
       {/* KIRI BAWAH: AVATAR STACK + INDIKATOR STATUS ONLINE/OFFLINE */}
       <div className="absolute bottom-3 left-3 z-20 flex items-center gap-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white/50 p-1.5 pr-2.5 shadow-sm">
         {/* Tombol Add Mungil */}
